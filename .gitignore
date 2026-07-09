@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+client/dist/
+
+# env & secrets
+.env
+.env.*
+!.env.example
+
+# caches
+.vite/
+.cache/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# mongodb-memory-server downloaded binaries
+.mongodb-binaries/
+mongodb-binaries/
+
+# os
+.DS_Store
+Thumbs.db
+
+# test/coverage
+coverage/
+
+# keep results/ (measured evidence is committed), but ignore transient run dirs
+results/tmp/
