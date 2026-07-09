@@ -1,0 +1,59 @@
+{
+  "startedAt": "2026-07-09T01:59:08.902Z",
+  "steps": [
+    {
+      "name": "whoami-logged-out",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "login",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "create-story",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "like",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "comment",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "list-comments",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "list-stories",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "profile",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "socket-chat-broadcast",
+      "ok": true
+    },
+    {
+      "name": "chat-history",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "total": 10,
+    "allPassed": true
+  }
+}

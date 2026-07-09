@@ -1,0 +1,19 @@
+{
+  "description": "Live in-browser verification of the running Catbook app (server serving the production Vite build on an in-memory MongoDB, driven headlessly).",
+  "url": "http://localhost:3000",
+  "navbarBackgroundColor": "rgb(66, 103, 178)",
+  "consoleErrors": 0,
+  "feedPage": {
+    "loggedInAs": "Hi, Ada Lovelace",
+    "stories": 3,
+    "comments": 1,
+    "likedStories": 1,
+    "likeCounts": ["0", "0", "2"]
+  },
+  "chatPage": {
+    "presence": "1 online: Ada Lovelace",
+    "messageSentOverSocket": "Ada Lovelace: Hello from the browser over Socket.io!",
+    "note": "Message was sent via socket.emit('chat:send') from the browser, broadcast back as 'chat:new', and persisted to MongoDB (loaded from history on reload)."
+  },
+  "sessionPersistence": "Reloading the page restored the logged-in user via the session cookie (GET /api/whoami)."
+}

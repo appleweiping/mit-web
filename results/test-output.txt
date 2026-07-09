@@ -1,0 +1,38 @@
+
+ RUN  v2.1.9 D:/Project/web/mit-web
+
+ ✓ tests/api.test.js > auth > whoami returns {} when logged out
+ ✓ tests/api.test.js > auth > login creates a user and sets the session
+ ✓ tests/api.test.js > auth > login is idempotent for the same name (stable googleid)
+ ✓ tests/api.test.js > auth > rejects login with no name
+ ✓ tests/api.test.js > auth > logout clears the session
+ ✓ tests/api.test.js > stories > requires login to post a story
+ ✓ tests/api.test.js > stories > creates and lists stories newest-first
+ ✓ tests/api.test.js > stories > rejects an empty story
+ ✓ tests/api.test.js > likes > toggles a like on and off
+ ✓ tests/api.test.js > likes > does not double-count the same user's like
+ ✓ tests/api.test.js > likes > 404s liking a missing story
+ ✓ tests/api.test.js > comments > adds and lists comments for a story
+ ✓ tests/api.test.js > comments > requires login to comment
+ ✓ tests/api.test.js > comments > 404s commenting on a missing story
+ ✓ tests/api.test.js > profile > returns only the logged-in user's stories
+ ✓ tests/api.test.js > routing > 404s an unknown api route
+ ✓ tests/socket.test.js > Socket.io real-time chat > broadcasts a chat message to all connected clients and persists it 621ms
+ ✓ tests/socket.test.js > Socket.io real-time chat > rejects a chat message from an unidentified socket
+ ✓ tests/socket.test.js > Socket.io real-time chat > broadcasts the active-user presence list
+ ✓ tests/components.test.jsx > utilities.formatParams > encodes params into a query string
+ ✓ tests/components.test.jsx > utilities.formatParams > returns empty string for no params
+ ✓ tests/components.test.jsx > <NewPostInput /> > submits trimmed text and clears the field 1057ms
+ ✓ tests/components.test.jsx > <NewPostInput /> > does not submit empty/whitespace text
+ ✓ tests/components.test.jsx > <NewPostInput /> > submits on Enter
+ ✓ tests/components.test.jsx > <Story /> > renders author, content and like count
+ ✓ tests/components.test.jsx > <Story /> > disables the like button when logged out
+ ✓ tests/components.test.jsx > <Story /> > calls onToggleLike with the next liked state
+ ✓ tests/components.test.jsx > <Story /> > reflects an already-liked story with aria-pressed
+ ✓ tests/components.test.jsx > <Story /> > renders its comments
+
+ Test Files  3 passed (3)
+      Tests  29 passed (29)
+   Start at  10:16:54
+   Duration  63.72s (transform 572ms, setup 4.70s, collect 22.34s, tests 19.16s, environment 10.22s, prepare 3.47s)
+

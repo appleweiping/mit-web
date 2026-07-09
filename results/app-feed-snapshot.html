@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Catbook — live feed snapshot</title>
+<!-- Captured from the running app (http://localhost:3000) via the headless preview browser.
+     Logged in as Ada Lovelace; 3 stories, 1 comment, Ada's own story liked (2 likes). -->
+<style>
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --ink: #1c1e21;
+  --muted: #65676b;
+  --accent: #4267b2;
+  --accent-2: #e4144c;
+  --border: #dcdfe3;
+  --radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 14px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+input {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ---- NavBar ---- */
+.NavBar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.NavBar a {
+  color: #fff;
+  text-decoration: none;
+}
+.NavBar-brand {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.NavBar-sub {
+  font-size: 11px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+.NavBar-links {
+  display: flex;
+  gap: 14px;
+  margin-left: auto;
+}
+.NavBar-link.active {
+  text-decoration: underline;
+  font-weight: 600;
+}
+.NavBar-auth {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.NavBar-login {
+  display: flex;
+  gap: 6px;
+}
+.NavBar-user {
+  font-size: 14px;
+}
+.NavBar-auth button {
+  background: #fff;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---- layout ---- */
+.App-main {
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+/* ---- inputs ---- */
+.NewPostInput {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+.NewPostInput input {
+  flex: 1;
+}
+
+/* ---- Story ---- */
+.Story {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.Story-author {
+  font-weight: 700;
+}
+.Story-content {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+.Story-actions {
+  margin: 6px 0;
+}
+.Story-like {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.Story-like.liked {
+  color: var(--accent-2);
+  border-color: var(--accent-2);
+}
+.Story-comments {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+.Comment {
+  font-size: 14px;
+  margin: 4px 0;
+}
+.Comment-author {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* ---- Chat ---- */
+.Chat-presence {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.Chat-log {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  height: 360px;
+  overflow-y: auto;
+}
+.Chat-message {
+  margin: 4px 0;
+  font-size: 14px;
+}
+.Chat-sender {
+  font-weight: 600;
+  margin-right: 6px;
+  color: var(--accent);
+}
+
+/* ---- Profile ---- */
+.Profile-stats {
+  display: flex;
+  gap: 16px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.Profile-story {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Feed-hint,
+.Chat-hint,
+.Feed-empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+</style></head><body>
+<div class="App"><nav class="NavBar"><div class="NavBar-brand"><a href="/">🐱 Catbook</a><span class="NavBar-sub">MIT Web Lab</span></div><div class="NavBar-links"><a class="NavBar-link active" href="/">Feed</a><a class="NavBar-link" href="/chat">Chat</a><a class="NavBar-link" href="/profile">Profile</a></div><div class="NavBar-auth"><span class="NavBar-user">Hi, Ada Lovelace</span><button type="button">Log out</button></div></nav><main class="App-main"><div class="Feed"><h1>Feed</h1><div class="NewPostInput"><input type="text" aria-label="Share a story…" placeholder="Share a story…" maxlength="280" value=""><button type="button" disabled="">Post story</button></div><div class="Story"><div class="Story-header"><span class="Story-author">Grace Hopper</span></div><div class="Story-content">Debugging is just removing the moths.</div><div class="Story-actions"><button type="button" class="Story-like" aria-pressed="false" aria-label="Like story">♡ <span class="Story-likeCount">0</span></button></div><div class="Story-comments"></div><div class="NewPostInput"><input type="text" aria-label="Add a comment…" placeholder="Add a comment…" maxlength="280" value=""><button type="button" disabled="">Comment</button></div></div><div class="Story"><div class="Story-header"><span class="Story-author">Ada Lovelace</span></div><div class="Story-content">Socket.io makes the live chat feel instant.</div><div class="Story-actions"><button type="button" class="Story-like" aria-pressed="false" aria-label="Like story">♡ <span class="Story-likeCount">0</span></button></div><div class="Story-comments"></div><div class="NewPostInput"><input type="text" aria-label="Add a comment…" placeholder="Add a comment…" maxlength="280" value=""><button type="button" disabled="">Comment</button></div></div><div class="Story"><div class="Story-header"><span class="Story-author">Ada Lovelace</span></div><div class="Story-content">Just shipped my first full-stack app in weblab! Express + Mongo + React + sockets.</div><div class="Story-actions"><button type="button" class="Story-like liked" aria-pressed="true" aria-label="Unlike story">♥ <span class="Story-likeCount">2</span></button></div><div class="Story-comments"><div class="Comment"><span class="Comment-author">Grace Hopper</span><span class="Comment-body">Congrats! The MERN stack clicks once sockets are in.</span></div></div><div class="NewPostInput"><input type="text" aria-label="Add a comment…" placeholder="Add a comment…" maxlength="280" value=""><button type="button" disabled="">Comment</button></div></div></div></main></div>
+</body></html>
