@@ -31,3 +31,5 @@ coverage/
 
 # keep results/ (measured evidence is committed), but ignore transient run dirs
 results/tmp/
+# results/ evidence logs are committed despite the global *.log ignore above
+!results/*.log

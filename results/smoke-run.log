@@ -1,0 +1,14 @@
+server up on http://localhost:54872 (db: in-memory MongoDB)
+GET /api/whoami (logged out) -> 200
+POST /api/login -> {"status":200,"user":{"_id":"6a4f00723f17e8db5cddd1bc","name":"Ada Lovelace","googleid":"local:177f85df57ad121d5aaac807"}}
+POST /api/story -> {"status":200,"id":"6a4f00723f17e8db5cddd1be","content":"Hello from the smoke test!"}
+POST /api/like (like) -> {"status":200,"likeCount":1}
+POST /api/comment -> {"status":200,"content":"First!"}
+GET /api/comment -> {"status":200,"count":1}
+GET /api/stories -> {"status":200,"count":1,"topLikes":1}
+GET /api/profile/stories -> {"status":200,"count":1}
+two websocket clients connected
+chat:send ack -> {"ok":true}
+clientB received chat:new -> {"sender":"Ada Lovelace","content":"live message over websocket"}
+GET /api/chat (history) -> {"status":200,"count":1}
+SMOKE RESULT: 10/10 steps passed
